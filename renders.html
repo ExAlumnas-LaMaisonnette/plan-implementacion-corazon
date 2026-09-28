@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>Renders · Proyecto Corazón</title>
+<meta name="description" content="Renders de la instalación final del Proyecto El Corazón de La Maisonnette: entrada, pasillo y espacio inmersivo.">
+<style>
+:root{--red:#F5252A;--ink:#171717;--muted:#666;--line:#ececec;--soft:#fff4f4;--bg:#ffffff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Gotham Book","Gotham","Avenir Next","Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:var(--red)}
+.wrap{max-width:980px;margin:0 auto;padding:28px 24px 70px}
+.back{display:inline-block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted);margin-bottom:22px}
+.back:hover,.back:focus{color:var(--red)}
+.hero{text-align:center;padding:18px 0 24px}
+.logo{width:min(230px,54vw);height:auto;display:block;margin:0 auto 10px}
+.hearts{display:flex;justify-content:center;gap:14px;margin:2px 0 18px;font-size:19px;line-height:1;color:var(--red)}
+h1{font-size:clamp(28px,5vw,46px);line-height:1.05;margin:0 0 8px;font-weight:700;letter-spacing:-.02em}
+.subtitle{font-size:clamp(14px,2vw,18px);color:var(--red);margin:0}
+.rule{height:1px;background:var(--red);margin:26px 0 0}
+.intro{max-width:760px;margin:26px auto 0;text-align:center;color:#333}
+.section{padding:34px 0 6px;scroll-margin-top:20px}
+.section-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:6px}
+.section-num{font-size:16px;font-weight:700;color:var(--red);letter-spacing:.04em}
+h2{font-size:clamp(22px,3.2vw,31px);line-height:1.12;margin:0;font-weight:700;letter-spacing:-.015em}
+.lead{margin:0 0 18px;color:var(--muted);font-size:15px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+figure{margin:0}
+figure button{all:unset;display:block;width:100%;cursor:zoom-in;border-radius:4px}
+figure button:focus-visible{outline:2px solid var(--red);outline-offset:4px}
+figure img{display:block;width:100%;height:auto;aspect-ratio:941/1672;object-fit:cover;background:var(--soft);border-radius:4px}
+figcaption{font-size:13px;color:var(--muted);margin-top:8px;display:flex;justify-content:space-between;gap:10px}
+figcaption b{font-weight:700;color:var(--ink)}
+.footer{text-align:center;color:#888;font-size:12px;padding-top:34px}
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
+dialog.lb::backdrop{background:rgba(23,23,23,.92)}
+.lb-inner{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:16px}
+.lb-inner img{max-width:100%;max-height:calc(100vh - 32px);width:auto;height:auto;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb-cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;color:#fff;font-size:13px;letter-spacing:.04em;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);color:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-btn:hover{background:rgba(255,255,255,.25)}
+.lb-prev{left:14px}.lb-next{right:14px}
+.lb-close{position:absolute;top:14px;right:14px;transform:none;font-size:20px}
+@media (max-width:640px){
+  .wrap{padding:18px 18px 54px}
+  body{font-size:15.5px;line-height:1.58}
+  .pair{grid-template-columns:1fr 1fr;gap:10px}
+  figcaption{flex-direction:column;gap:2px}
+  .lb-btn{width:38px;height:38px;font-size:18px}
+}
+@media print{
+  .back,dialog{display:none!important}
+  .section{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="./">← Volver al plan de implementación</a>
+  <header class="hero">
+    <img class="logo" src="renders/logo.png" alt="La Maisonnette 90 años">
+    <div class="hearts" aria-hidden="true"><span>♥</span><span>♥</span><span>♥</span><span>♥</span></div>
+    <h1>RENDERS DE LA INSTALACIÓN</h1>
+    <p class="subtitle">Proyecto “El Corazón de La Maisonnette” · 90 años</p>
+    <div class="rule"></div>
+    <p class="intro">Tres momentos del recorrido, cada uno en boceto y en render a color. Las imágenes son referenciales y muestran la intención espacial de la propuesta; el montaje final se ajustará a las condiciones del colegio.</p>
+  </header>
+
+  <section class="section" id="entrada">
+    <div class="section-head"><div class="section-num">01</div><h2>Entrada</h2></div>
+    <p class="lead">Velos de tul rojo con corazones suspendidos entre las columnas del acceso. El primer contacto con la obra desde el espacio cotidiano del colegio.</p>
+    <div class="pair">
+      <figure><button type="button" data-lb="0"><img src="renders/entradabn.jpg" alt="Boceto de la entrada: velos rojos con corazones colgando entre las columnas del pasillo de acceso" loading="lazy"></button><figcaption><b>Boceto</b><span>Entrada</span></figcaption></figure>
+      <figure><button type="button" data-lb="1"><img src="renders/entradac.jpg" alt="Render a color de la entrada: velos de tul rojo con corazones de tela suspendidos entre las columnas" loading="lazy"></button><figcaption><b>Render</b><span>Entrada</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section" id="pasillo">
+    <div class="section-head"><div class="section-num">02</div><h2>Pasillo</h2></div>
+    <p class="lead">Capas de telas rojas de distintas transparencias y texturas que caen desde el cielo del corredor. El recorrido se vuelve progresivamente más denso y sensorial.</p>
+    <div class="pair">
+      <figure><button type="button" data-lb="2"><img src="renders/pasillobn.jpg" alt="Boceto del pasillo: telas rojas de distintas transparencias colgando a lo largo del corredor" loading="lazy"></button><figcaption><b>Boceto</b><span>Pasillo</span></figcaption></figure>
+      <figure><button type="button" data-lb="3"><img src="renders/pasilloc.jpg" alt="Render a color del pasillo: cortinas y velos rojos cayendo desde el techo de madera del corredor" loading="lazy"></button><figcaption><b>Render</b><span>Pasillo</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section" id="inmersiva">
+    <div class="section-head"><div class="section-num">03</div><h2>Espacio inmersivo</h2></div>
+    <p class="lead">El momento central: una estructura envolvente de telas, corazones suspendidos e iluminación roja, concebida como el interior del corazón antes de continuar el recorrido.</p>
+    <div class="pair">
+      <figure><button type="button" data-lb="4"><img src="renders/inmersivabn.jpg" alt="Boceto del espacio inmersivo: cortinas rojas abiertas hacia un túnel con corazones suspendidos e iluminación roja" loading="lazy"></button><figcaption><b>Boceto</b><span>Espacio inmersivo</span></figcaption></figure>
+      <figure><button type="button" data-lb="5"><img src="renders/inmersivac.jpg" alt="Render a color del espacio inmersivo: túnel de telas rojas con corazones colgantes iluminado en rojo" loading="lazy"></button><figcaption><b>Render</b><span>Espacio inmersivo</span></figcaption></figure>
+    </div>
+  </section>
+
+  <div class="footer">Proyecto “El Corazón de La Maisonnette” · 90 años · <a href="./">Plan de implementación</a></div>
+</main>
+
+<dialog class="lb" id="lb" aria-label="Imagen ampliada">
+  <div class="lb-inner">
+    <button class="lb-btn lb-close" type="button" data-act="close" aria-label="Cerrar">✕</button>
+    <button class="lb-btn lb-prev" type="button" data-act="prev" aria-label="Anterior">‹</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-btn lb-next" type="button" data-act="next" aria-label="Siguiente">›</button>
+    <div class="lb-cap" id="lb-cap"></div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('figure button[data-lb]')).map(function(b){
+    var img=b.querySelector('img'),cap=b.parentNode.querySelector('figcaption');
+    return {src:img.getAttribute('src'),alt:img.alt,cap:cap.textContent.replace(/\s+/g,' ').trim()};
+  });
+  var dlg=document.getElementById('lb'),im=document.getElementById('lb-img'),cp=document.getElementById('lb-cap'),i=0;
+  if(!dlg.showModal){return;}
+  function show(n){i=(n+items.length)%items.length;im.src=items[i].src;im.alt=items[i].alt;cp.textContent=items[i].cap;}
+  document.querySelectorAll('figure button[data-lb]').forEach(function(b){
+    b.addEventListener('click',function(){show(+b.dataset.lb);dlg.showModal();});
+  });
+  dlg.addEventListener('click',function(e){
+    var act=e.target.closest('[data-act]');
+    if(act){var a=act.dataset.act;if(a==='close')dlg.close();else if(a==='prev')show(i-1);else show(i+1);return;}
+    if(e.target===dlg||e.target.classList.contains('lb-inner'))dlg.close();
+  });
+  dlg.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft'){show(i-1);e.preventDefault();}
+    else if(e.key==='ArrowRight'){show(i+1);e.preventDefault();}
+  });
+  dlg.addEventListener('close',function(){im.src='';});
+})();
+</script>
+</body>
+</html>
