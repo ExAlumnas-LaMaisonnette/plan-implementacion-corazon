@@ -20,14 +20,14 @@
 .sidenav a.s:hover,.sidenav a.s:focus{color:var(--red,#F5252A);background:var(--soft,#fff4f4);outline:none}
 .sidenav a.s.active{color:var(--red,#F5252A);font-weight:700;background:var(--soft,#fff4f4)}
 .sidenav .sn-foot{margin-top:22px;font-size:11px;color:#888;line-height:1.5}
-.sn-toggle{position:fixed;top:10px;left:10px;z-index:41;width:42px;height:42px;border-radius:50%;border:1px solid var(--red,#F5252A);background:#fff;color:var(--red,#F5252A);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.sn-toggle{position:fixed;top:10px;left:10px;z-index:41;height:40px;padding:0 14px 0 12px;gap:8px;border-radius:999px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--red,#F5252A);background:#fff;color:var(--red,#F5252A);font-size:12px;font-family:"Montserrat","Avenir Next","Helvetica Neue",Arial,sans-serif;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.08)}
 .sn-toggle:hover,.sn-toggle:focus{background:var(--red,#F5252A);color:#fff;outline:none}
-@media (max-width:1179px){
+@media (max-width:1023px){
   .sidenav{padding-top:64px}
-  .back{margin-left:48px}
-  .nav{padding-left:56px;padding-right:56px}
+  .back{margin-left:110px}
+  .nav{padding-left:120px;padding-right:20px}
 }
-@media (min-width:1180px){
+@media (min-width:1024px){
   body{padding-left:264px}
   .sidenav{transform:none}
   .sidenav.open{box-shadow:none}

@@ -17,10 +17,11 @@
   });
   html+='</ul><div class="sn-foot">Proyecto “El Corazón de La Maisonnette” · 90 años</div>';
   nav.innerHTML=html;
-  var btn=document.createElement('button');btn.className='sn-toggle';btn.type='button';btn.setAttribute('aria-label','Abrir navegación');btn.innerHTML='☰';
+  var btn=document.createElement('button');btn.className='sn-toggle';btn.type='button';btn.setAttribute('aria-label','Abrir navegación');btn.innerHTML='<span aria-hidden="true" style="font-size:18px;line-height:1">☰</span>Menú';
   document.body.appendChild(nav);document.body.appendChild(btn);
-  function close(){nav.classList.remove('open');btn.innerHTML='☰';}
-  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.innerHTML=o?'✕':'☰';});
+  var ABRIR='<span aria-hidden="true" style="font-size:18px;line-height:1">☰</span>Menú', CERRAR='<span aria-hidden="true" style="font-size:16px;line-height:1">✕</span>Cerrar';
+  function close(){nav.classList.remove('open');btn.innerHTML=ABRIR;}
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.innerHTML=o?CERRAR:ABRIR;});
   nav.addEventListener('click',function(e){if(e.target.closest('a'))close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
   document.addEventListener('click',function(e){if(nav.classList.contains('open')&&!nav.contains(e.target)&&e.target!==btn)close();});
