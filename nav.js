@@ -1,8 +1,7 @@
-/* Navegador lateral compartido por los dos sitios del proyecto (plan de implementación y presupuesto).
- * Lista todas las páginas con sus secciones; marca la página actual y la sección visible. Mismo archivo en ambos repositorios. */
+/* Navegador lateral del sitio: lista todas las páginas (incluido el presupuesto, en /presupuesto/) con sus secciones;
+ * marca la página actual y la sección visible. */
 (function(){
-  var PLAN='https://exalumnas-lamaisonnette.github.io/plan-implementacion-corazon/', PRES='https://exalumnas-lamaisonnette.github.io/presupuesto-corazon/';
-  var enPres=/presupuesto/i.test(location.pathname);
+  var enPres=/\/presupuesto\/[^/]*$/.test(location.pathname), raiz=enPres?'../':'';
   var PAGES=[
     {site:'plan',file:'index.html',title:'Plan de implementación',secs:[['s1','01','Sentido de esta etapa'],['s2','02','Una obra construida desde la comunidad'],['s3','03','Concepto de la instalación final'],['s4','04','Activación de la comunidad'],['s5','05','Implementación y montaje'],['s6','06','Equipo responsable'],['s7','07','Apoyos requeridos al colegio'],['s8','08','Próximos pasos'],['s9','09','Permanencia posterior a la Velada Cultural']]},
     {site:'plan',file:'renders.html',title:'Renders',secs:[['entrada','01','Entrada'],['pasillo','02','Pasillo'],['inmersiva','03','Espacio inmersivo']]},
@@ -11,10 +10,10 @@
     {site:'pres',file:'pergola.html',title:'Presupuesto de la pérgola',secs:[]}
   ];
   var path=location.pathname.split('/').pop()||'index.html', site=enPres?'pres':'plan';
-  function href(p){var local=p.site===site;var base=local?'':(p.site==='plan'?PLAN:PRES);return base+(p.file==='index.html'?(local?'./':''):p.file);}
+  function href(p){var base=raiz+(p.site==='pres'?'presupuesto/':'');return base+(p.file==='index.html'?(base?'':'./'):p.file);}
   var nav=document.createElement('nav');nav.className='sidenav';nav.setAttribute('aria-label','Páginas del proyecto');
-  var logo=enPres?'logo.png':'renders/logo.png';
-  var html='<a class="sn-brand" href="'+(enPres?PLAN:'./')+'"><img src="'+logo+'" alt="La Maisonnette 90 años"><b>El Corazón de La Maisonnette</b><span>Proyecto 90 años</span></a><ul>';
+  var logo=raiz+'renders/logo.png';
+  var html='<a class="sn-brand" href="'+(raiz||'./')+'"><img src="'+logo+'" alt="La Maisonnette 90 años"><b>El Corazón de La Maisonnette</b><span>Proyecto 90 años</span></a><ul>';
   PAGES.forEach(function(p){
     var cur=p.site===site&&p.file===path;
     html+='<li class="page'+(cur?' current':'')+'"><a class="p" href="'+(href(p)||'./')+'">'+p.title+'</a>';
