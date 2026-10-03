@@ -25,9 +25,11 @@
 @media (max-width:1023px){
   .sidenav{padding-top:64px}
   .back{margin-left:110px}
-  .nav{display:none}
+  nav.nav{display:none!important}
   .hero{padding-top:40px}
-  .tabs{top:0}
+  nav.tabs{padding-left:118px!important}
+  .sidenav{z-index:1001}
+  .sn-toggle{z-index:1002}
 }
 @media (min-width:1024px){
   body{padding-left:264px}
