@@ -35,7 +35,7 @@
   var ids=Object.keys(links);
   function tab(id){var t=document.querySelector('.tabs a[data-panel="'+id+'"]');if(t){t.click();return true;}return false;}
   function marcar(id){ids.forEach(function(k){links[k].classList.toggle('active',k===id);});}
-  nav.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;close();var h=a.getAttribute('href');if(h&&h.charAt(0)==='#'&&tab(h.slice(1))){e.preventDefault();marcar(h.slice(1));history.replaceState(null,'',h);}});
+  nav.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;close();var h=a.getAttribute('href');if(h&&h.charAt(0)==='#'&&tab(h.slice(1))){e.preventDefault();marcar(h.slice(1));history.replaceState(null,'',h);if(window.innerWidth<1024){var el=document.getElementById(h.slice(1));if(el)setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60);}}});
   if(!ids.length)return;
   if(document.querySelector('.tabs a[data-panel]')){
     var h=location.hash.slice(1);if(h&&links[h])tab(h);
